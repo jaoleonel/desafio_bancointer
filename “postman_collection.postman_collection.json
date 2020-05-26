@@ -1,0 +1,202 @@
+{
+	"info": {
+		"_postman_id": "c86e4eae-a7a8-4fa9-a59b-e2fdeb0a3f9d",
+		"name": "“postman_collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getUsuarioById",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "public_key",
+						"value": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnGv6VnsIS5AA34C6NPPyNxDkumLZVsR9i/hjtQkN6wDc/uAcW5JRikYX4luHLksxvwom2Ny9WppUJ/pHfzWdlV/KH1iw57rOSKLatNCT0Gh4anCVJgcbuMNkRIwBQE70u+vygcNTZeqEtkxli4EJpvij355SjuaqWi3omCjbq9aO8RpKDjNyJL7zOIjnmAJZ5+GalabRkiEn4UdihDrNyJQazf0n9gjCKenyN8AFK7hbl/lNvNUoCZ3v7sGPX09LF/OtQ6Jl7S21IbGkTJ3tVk9mA3RMlHvoH22JVXYk64Wd4XJCqQsooHxMRCbU+BMX0RfJc5DipPPYH4m+3400cwIDAQAB",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/usuarios/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createUsuarioSucesso",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "public_key",
+						"value": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnGv6VnsIS5AA34C6NPPyNxDkumLZVsR9i/hjtQkN6wDc/uAcW5JRikYX4luHLksxvwom2Ny9WppUJ/pHfzWdlV/KH1iw57rOSKLatNCT0Gh4anCVJgcbuMNkRIwBQE70u+vygcNTZeqEtkxli4EJpvij355SjuaqWi3omCjbq9aO8RpKDjNyJL7zOIjnmAJZ5+GalabRkiEn4UdihDrNyJQazf0n9gjCKenyN8AFK7hbl/lNvNUoCZ3v7sGPX09LF/OtQ6Jl7S21IbGkTJ3tVk9mA3RMlHvoH22JVXYk64Wd4XJCqQsooHxMRCbU+BMX0RfJc5DipPPYH4m+3400cwIDAQAB",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"teste@teste.com\",\r\n  \"listaDigitoUnico\": [\r\n    {\r\n      \"entrada\": 1111,\r\n      \"numConcatenacoes\": 2\r\n    }\r\n  ],\r\n  \"nome\": \"teste\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createUsuarioFalha1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"teste\",\r\n  \"listaDigitoUnico\": [\r\n    {\r\n      \"entrada\": 1111,\r\n      \"numConcatenacoes\": 2\r\n    }\r\n  ],\r\n  \"nome\": \"teste\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createUsuarioFalha2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"teste@teste.com\",\r\n  \"listaDigitoUnico\": [\r\n    {\r\n      \"entrada\": 1111,\r\n      \"numConcatenacoes\": 2\r\n    }\r\n  ],\r\n  \"nome\": \"\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "entireUsuarioUpdate",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "public_key",
+						"value": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnGv6VnsIS5AA34C6NPPyNxDkumLZVsR9i/hjtQkN6wDc/uAcW5JRikYX4luHLksxvwom2Ny9WppUJ/pHfzWdlV/KH1iw57rOSKLatNCT0Gh4anCVJgcbuMNkRIwBQE70u+vygcNTZeqEtkxli4EJpvij355SjuaqWi3omCjbq9aO8RpKDjNyJL7zOIjnmAJZ5+GalabRkiEn4UdihDrNyJQazf0n9gjCKenyN8AFK7hbl/lNvNUoCZ3v7sGPX09LF/OtQ6Jl7S21IbGkTJ3tVk9mA3RMlHvoH22JVXYk64Wd4XJCqQsooHxMRCbU+BMX0RfJc5DipPPYH4m+3400cwIDAQAB",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"teste2@teste.com\",\r\n  \"listaDigitoUnico\": [\r\n    {\r\n      \"entrada\": 4444,\r\n      \"numConcatenacoes\": 4\r\n    }\r\n  ],\r\n  \"nome\": \"teste2\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/usuarios/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "partialUsuarioUpdate",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "public_key",
+						"value": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnGv6VnsIS5AA34C6NPPyNxDkumLZVsR9i/hjtQkN6wDc/uAcW5JRikYX4luHLksxvwom2Ny9WppUJ/pHfzWdlV/KH1iw57rOSKLatNCT0Gh4anCVJgcbuMNkRIwBQE70u+vygcNTZeqEtkxli4EJpvij355SjuaqWi3omCjbq9aO8RpKDjNyJL7zOIjnmAJZ5+GalabRkiEn4UdihDrNyJQazf0n9gjCKenyN8AFK7hbl/lNvNUoCZ3v7sGPX09LF/OtQ6Jl7S21IbGkTJ3tVk9mA3RMlHvoH22JVXYk64Wd4XJCqQsooHxMRCbU+BMX0RfJc5DipPPYH4m+3400cwIDAQAB",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"\",\r\n  \"listaDigitoUnico\": [\r\n    {\r\n      \"entrada\": 111,\r\n      \"numConcatenacoes\": 4\r\n    }\r\n  ],\r\n  \"nome\": \"updatepartial\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/usuarios/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
