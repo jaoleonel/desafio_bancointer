@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "c86e4eae-a7a8-4fa9-a59b-e2fdeb0a3f9d",
-		"name": "“postman_collection",
+		"name": "postman_collection",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -49,7 +49,8 @@
 					{
 						"key": "public_key",
 						"value": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnGv6VnsIS5AA34C6NPPyNxDkumLZVsR9i/hjtQkN6wDc/uAcW5JRikYX4luHLksxvwom2Ny9WppUJ/pHfzWdlV/KH1iw57rOSKLatNCT0Gh4anCVJgcbuMNkRIwBQE70u+vygcNTZeqEtkxli4EJpvij355SjuaqWi3omCjbq9aO8RpKDjNyJL7zOIjnmAJZ5+GalabRkiEn4UdihDrNyJQazf0n9gjCKenyN8AFK7hbl/lNvNUoCZ3v7sGPX09LF/OtQ6Jl7S21IbGkTJ3tVk9mA3RMlHvoH22JVXYk64Wd4XJCqQsooHxMRCbU+BMX0RfJc5DipPPYH4m+3400cwIDAQAB",
-						"type": "text"
+						"type": "text",
+						"disabled": true
 					}
 				],
 				"body": {
@@ -192,6 +193,121 @@
 					"path": [
 						"usuarios",
 						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteUsuario",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "public_key",
+						"value": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnGv6VnsIS5AA34C6NPPyNxDkumLZVsR9i/hjtQkN6wDc/uAcW5JRikYX4luHLksxvwom2Ny9WppUJ/pHfzWdlV/KH1iw57rOSKLatNCT0Gh4anCVJgcbuMNkRIwBQE70u+vygcNTZeqEtkxli4EJpvij355SjuaqWi3omCjbq9aO8RpKDjNyJL7zOIjnmAJZ5+GalabRkiEn4UdihDrNyJQazf0n9gjCKenyN8AFK7hbl/lNvNUoCZ3v7sGPX09LF/OtQ6Jl7S21IbGkTJ3tVk9mA3RMlHvoH22JVXYk64Wd4XJCqQsooHxMRCbU+BMX0RfJc5DipPPYH4m+3400cwIDAQAB",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/usuarios/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obterDigitoUnico",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "public_key",
+						"value": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnGv6VnsIS5AA34C6NPPyNxDkumLZVsR9i/hjtQkN6wDc/uAcW5JRikYX4luHLksxvwom2Ny9WppUJ/pHfzWdlV/KH1iw57rOSKLatNCT0Gh4anCVJgcbuMNkRIwBQE70u+vygcNTZeqEtkxli4EJpvij355SjuaqWi3omCjbq9aO8RpKDjNyJL7zOIjnmAJZ5+GalabRkiEn4UdihDrNyJQazf0n9gjCKenyN8AFK7hbl/lNvNUoCZ3v7sGPX09LF/OtQ6Jl7S21IbGkTJ3tVk9mA3RMlHvoH22JVXYk64Wd4XJCqQsooHxMRCbU+BMX0RfJc5DipPPYH4m+3400cwIDAQAB",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/usuario/2/digitos-unicos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuario",
+						"2",
+						"digitos-unicos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateOrOnlyGetDigitoUnicoDeUsuario",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "public_key",
+						"value": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnGv6VnsIS5AA34C6NPPyNxDkumLZVsR9i/hjtQkN6wDc/uAcW5JRikYX4luHLksxvwom2Ny9WppUJ/pHfzWdlV/KH1iw57rOSKLatNCT0Gh4anCVJgcbuMNkRIwBQE70u+vygcNTZeqEtkxli4EJpvij355SjuaqWi3omCjbq9aO8RpKDjNyJL7zOIjnmAJZ5+GalabRkiEn4UdihDrNyJQazf0n9gjCKenyN8AFK7hbl/lNvNUoCZ3v7sGPX09LF/OtQ6Jl7S21IbGkTJ3tVk9mA3RMlHvoH22JVXYk64Wd4XJCqQsooHxMRCbU+BMX0RfJc5DipPPYH4m+3400cwIDAQAB",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/usuarios/1/digitos-unicos/555/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios",
+						"1",
+						"digitos-unicos",
+						"555",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateOrOnlyGetDigitoUnicoDeUsuarioSemUsuario",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "public_key",
+						"value": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnGv6VnsIS5AA34C6NPPyNxDkumLZVsR9i/hjtQkN6wDc/uAcW5JRikYX4luHLksxvwom2Ny9WppUJ/pHfzWdlV/KH1iw57rOSKLatNCT0Gh4anCVJgcbuMNkRIwBQE70u+vygcNTZeqEtkxli4EJpvij355SjuaqWi3omCjbq9aO8RpKDjNyJL7zOIjnmAJZ5+GalabRkiEn4UdihDrNyJQazf0n9gjCKenyN8AFK7hbl/lNvNUoCZ3v7sGPX09LF/OtQ6Jl7S21IbGkTJ3tVk9mA3RMlHvoH22JVXYk64Wd4XJCqQsooHxMRCbU+BMX0RfJc5DipPPYH4m+3400cwIDAQAB",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/usuarios/digitos-unicos/555/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios",
+						"digitos-unicos",
+						"555",
+						"10"
 					]
 				}
 			},

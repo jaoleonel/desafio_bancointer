@@ -127,8 +127,8 @@ public class UsuarioController {
 		}
 	}
 
-	@PatchMapping(value = { "/usuarios/{id}/digitos-unicos/{digEntrada}/{numConcatenacoes}",
-			"/usuarios/digitos-unicos/{digEntrada}/{numConcatenacoes}" })
+	@PatchMapping(value = { "/usuarios/{id}/digitos-unicos/{entrada}/{numConcatenacoes}",
+			"/usuarios/digitos-unicos/{entrada}/{numConcatenacoes}" })
 	public ResponseEntity<Object> updateOrOnlyGetDigitoUnicoDeUsuario(
 			@RequestHeader("public_key") String base64PublicKey, @PathVariable int entrada,
 			@PathVariable int numConcatenacoes, @PathVariable Optional<Long> id) {
@@ -174,20 +174,20 @@ public class UsuarioController {
 		if (usuarioData.isPresent()) {
 
 			_usuario = usuarioData.get();
-			if(!usuario.nome.isEmpty())  _usuario.setNome(usuario.nome);			
-			if(!usuario.email.isEmpty())  _usuario.setEmail(usuario.email);
+			if(usuario.nome != null && !usuario.nome.isEmpty())  _usuario.setNome(usuario.nome);			
+			if(usuario.email != null && !usuario.email.isEmpty())  _usuario.setEmail(usuario.email);
 
 			if (isPut) {
 				List<DigitoUnico> listaDigitoUnicoLocal = new ArrayList<DigitoUnico>();
 
 				usuario.listaDigitoUnico.forEach(
-						dig -> listaDigitoUnicoLocal.add(DigitoUnico.obterDigitoUnico(dig.entrada, dig.entrada)));
+						dig -> listaDigitoUnicoLocal.add(DigitoUnico.obterDigitoUnico(dig.entrada, dig.numConcatenacoes)));
 				_usuario.setListaDigitoUnico(listaDigitoUnicoLocal);
 
 			} else {
 				
 				for(var dig : usuario.listaDigitoUnico) {
-					_usuario.getListaDigitoUnico().add(DigitoUnico.obterDigitoUnico(dig.entrada, dig.entrada));
+					_usuario.getListaDigitoUnico().add(DigitoUnico.obterDigitoUnico(dig.entrada, dig.numConcatenacoes));
 				}
 			}
 		} else if (isPut) {
